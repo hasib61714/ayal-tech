@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* ─── Brand colors (emerald-700 + teal-50 theme) ───────────── */
+:root {
+  --primary:      #047857;   /* emerald-700 */
+  --primary-dark: #065f46;   /* emerald-900 */
+  --accent:       #0f766e;   /* teal-700    */
+
+  /* ── Light mode ───────────────────────────────────────────── */
+  --background:        #ffffff;
+  --background-2:      #f0fdfa;   /* teal-50 */
+  --background-3:      #ccfbf1;   /* teal-100 */
+  --foreground:        #0f172a;
+  --foreground-muted:  #334155;
+  --foreground-subtle: #64748b;
+  --card-bg:           #ffffff;
+  --card-border:       rgba(0, 0, 0, 0.08);
+  --nav-bg:            rgba(255, 255, 255, 0.98);
+  --nav-border:        rgba(0, 0, 0, 0.08);
+}
+
+/* ── Dark mode ────────────────────────────────────────────── */
+.dark {
+  --background:        #050d1f;
+  --background-2:      #0a1628;
+  --background-3:      #0f1f3d;
+  --foreground:        #f1f5f9;
+  --foreground-muted:  #cbd5e1;
+  --foreground-subtle: #94a3b8;
+  --card-bg:           rgba(15, 31, 61, 0.7);
+  --card-border:       rgba(4, 120, 87, 0.18);   /* emerald-700/18 */
+  --nav-bg:            rgba(5, 13, 31, 0.97);
+  --nav-border:        rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-accent:  var(--accent);
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Glass card ─────────────────────────────────────────────── */
+.glass {
+  background: rgba(15, 31, 61, 0.75);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Gradient text — emerald-700 → teal-700 ─────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #047857, #0f766e, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Float animation ────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+/* ── Glow animation ─────────────────────────────────────────── */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(4, 120, 87, 0.3); }
+  50%       { box-shadow: 0 0 40px rgba(4, 120, 87, 0.5), 0 0 80px rgba(15, 118, 110, 0.2); }
+}
+.animate-glow { animation: glow 3s ease-in-out infinite; }
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f0fdfa; }
+.dark ::-webkit-scrollbar-track { background: #0a1628; }
+::-webkit-scrollbar-thumb { background: rgba(4, 120, 87, 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(4, 120, 87, 0.7); }
