@@ -1,11 +1,5 @@
 import { LucideIcon } from "lucide-react";
 
-export interface NavItem {
-  label: string;
-  href: string;
-  icon?: LucideIcon;
-}
-
 export interface Service {
   id: string;
   title: string;
@@ -25,13 +19,6 @@ export interface Feature {
   color: string;
 }
 
-export interface Stat {
-  value: string;
-  label: string;
-  icon: LucideIcon;
-  suffix?: string;
-}
-
 export interface Testimonial {
   name: string;
   role: string;
@@ -48,13 +35,6 @@ export interface Project {
   category: string;
   tags: string[];
   image?: string;
-}
-
-export interface ContactFormData {
-  name: string;
-  email: string;
-  service: string;
-  message: string;
 }
 
 export interface ButtonProps {
