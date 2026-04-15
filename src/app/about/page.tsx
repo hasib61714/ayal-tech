@@ -8,7 +8,7 @@ import { Target, Eye, Users, Award, Building2, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about AYAL TECH — our mission, vision, and the team behind Bangladesh's leading communication technology company.",
+  description: "AYAL TECH is a cutting-edge technology company specializing in advanced analytics and AI-driven solutions — computer vision, IoT, and smart building management.",
 };
 
 // ──────────────────────────────────────────────────────────────────────
@@ -47,11 +47,12 @@ const values = [
 
 const industries = [
   "Retail & Shopping Malls",
+  "Healthcare Facilities",
+  "Educational Institutions",
+  "Transportation Hubs",
+  "Corporate Offices",
+  "Event Venues",
   "Financial Services",
-  "E-commerce",
-  "Marketing Agencies",
-  "Political Campaigns",
-  "Corporate Businesses",
   "Government Organizations",
 ];
 
@@ -68,8 +69,11 @@ export default function AboutPage() {
                 Who We <span className="gradient-text">Are</span>
               </h1>
               <p className="text-lg text-slate-400 leading-relaxed max-w-2xl">
-                AYAL TECH is a technology solutions company focused on helping businesses
-                improve communication, automation, and operational intelligence.
+                AYAL TECH is a cutting-edge technology company specializing in
+                advanced analytics and AI-driven solutions. As a sister concern of
+                Red Data, we leverage deep expertise in artificial intelligence,
+                computer vision, and IoT technologies to deliver innovative solutions
+                for smart building management and crowd monitoring.
               </p>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
@@ -98,23 +102,27 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Building the Future of{" "}
-                <span className="gradient-text">Business Technology</span>
+                AI & Analytics at the Core of{" "}
+                <span className="gradient-text">Everything We Build</span>
               </h2>
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
-                  We specialize in developing scalable digital communication systems and smart
-                  business software that help organizations operate more efficiently and make
-                  data-driven decisions.
+                  AYAL TECH combines state-of-the-art 3D sensing technology with advanced
+                  AI algorithms to deliver solutions that exceed industry standards for
+                  accuracy and reliability. Our products serve various sectors including
+                  retail, healthcare, education, transportation, and corporate facilities.
                 </p>
                 <p>
-                  Our team focuses on reliability, security, and performance, ensuring every
-                  solution we deliver is ready for real-world business demands.
+                  Our core technology is built on advanced 3D depth sensing combined with
+                  machine learning algorithms — providing unparalleled accuracy in people
+                  counting and crowd analytics. Processing happens on-device via edge
+                  computing, ensuring real-time results with minimal latency and zero
+                  personal data collection.
                 </p>
                 <p>
-                  Whether you are a startup, enterprise, retail business, or service provider,
-                  we help you leverage technology to streamline operations and engage customers
-                  effectively.
+                  With a focus on research and development, we deliver digital communication
+                  systems and smart business software that help organizations operate more
+                  efficiently and make data-driven decisions at every level.
                 </p>
               </div>
 
@@ -159,9 +167,9 @@ export default function AboutPage() {
         <Container>
           <SectionHeader
             eyebrow="Industries We Serve"
-            title="Delivering Value Across"
-            titleHighlight="Diverse Sectors"
-            description="AYAL TECH solutions are trusted by businesses across multiple industries throughout Bangladesh."
+            title="Delivering Intelligence Across"
+            titleHighlight="Every Sector"
+            description="AYAL TECH solutions are deployed across retail, healthcare, education, transportation, and corporate facilities throughout Bangladesh."
           />
           <div className="flex flex-wrap justify-center gap-3">
             {industries.map((ind) => (

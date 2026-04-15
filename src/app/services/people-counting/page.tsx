@@ -6,9 +6,6 @@ import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
 import {
   Users,
-  CheckCircle2,
-  BarChart2,
-  Wifi,
   Brain,
   LineChart,
   ArrowRight,
@@ -16,6 +13,14 @@ import {
   Building2,
   Calendar,
   Cpu,
+  Shield,
+  HardDrive,
+  EyeOff,
+  GraduationCap,
+  HeartPulse,
+  Train,
+  UserCheck,
+  RefreshCcw,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -27,39 +32,39 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Brain,
-    title: "AI-Based Detection",
+    title: "3D Binocular AI Sensing",
     description:
-      "Computer vision algorithms accurately count individuals even in high-density scenarios, handling occlusion and varying lighting conditions.",
+      "Obtains 3D depth information in real-time via binocular stereo vision AI sensors, identifying head and shoulder features with 99%+ detection accuracy — even in crowded or occluded scenes.",
   },
   {
-    icon: Wifi,
-    title: "Real-time Streaming",
+    icon: Users,
+    title: "Two-Way People Counting",
     description:
-      "Live visitor counts update instantly on your dashboard. No delay — watch footfall change second by second.",
+      "Draws detection frames to track the number of people entering, exiting, passing, staying, and returning. Supports regional counting with custom detection areas and dwell-time tracking.",
   },
   {
-    icon: BarChart2,
-    title: "Analytics Dashboard",
+    icon: UserCheck,
+    title: "Demographics & Gender AI",
     description:
-      "Rich, intuitive dashboards with heatmaps, peak-hour analysis, and zone-level breakdowns of visitor movement.",
+      "Built-in AI recognizes age groups, gender, and ReID data to generate rich crowd portraits. Employee badge identification filters staff entry/exit data from visitor counts.",
   },
   {
-    icon: LineChart,
-    title: "Trend Reports",
+    icon: RefreshCcw,
+    title: "ReID Deduplication",
     description:
-      "Daily, weekly, and monthly reports help you spot patterns, optimize staff scheduling, and justify marketing spend.",
+      "Deep learning models eliminate duplicate counting of the same person entering, exiting, or staying multiple times in a day — ensuring accurate net visitor tallies.",
   },
   {
-    icon: Cpu,
-    title: "Edge Computing",
+    icon: HardDrive,
+    title: "90-Day Offline Storage",
     description:
-      "Processing happens on-device for ultra-low latency. No heavy cloud dependency — works reliably even with limited connectivity.",
+      "Large local storage capacity holds up to 90 days of data. Query and export records directly on-device — no cloud dependency required.",
   },
   {
-    icon: CheckCircle2,
-    title: "Multi-zone Support",
+    icon: EyeOff,
+    title: "Privacy-First Anonymous Mode",
     description:
-      "Monitor multiple entries, floors, or departments simultaneously. Centralized management for multi-location deployments.",
+      "Deep pseudo-color image mode collects zero personal data — only anonymous counting and analytics. Fully privacy-compliant by design.",
   },
 ];
 
@@ -68,33 +73,45 @@ const useCases = [
     icon: ShoppingBag,
     title: "Retail Stores",
     description:
-      "Measure conversion rates, identify peak shopping hours, and optimize staff deployment based on real visitor data.",
+      "Customer flow analysis and queue management. Measure peak hours, optimize staff deployment, and boost conversion rates with real visitor data.",
   },
   {
     icon: Building2,
-    title: "Shopping Malls",
+    title: "Office Buildings",
     description:
-      "Track footfall across entrances, floors, and tenant zones. Share visitor data with tenants to justify lease rates.",
+      "Occupancy monitoring and space optimization. Track space utilization, optimize meeting room availability, and plan expansions with confidence.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Educational Institutions",
+    description:
+      "Classroom attendance and facility usage tracking. Gain accurate occupancy data for resource planning and campus safety.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Healthcare Facilities",
+    description:
+      "Patient flow and waiting area management. Reduce congestion, improve patient experience, and manage capacity in real-time.",
+  },
+  {
+    icon: Train,
+    title: "Transportation Hubs",
+    description:
+      "Passenger flow and crowd control for high-speed railways, buses, and subways — regardless of crowding or lighting conditions.",
   },
   {
     icon: Calendar,
-    title: "Events & Venues",
+    title: "Event Venues",
     description:
-      "Monitor crowd levels in real-time, enforce capacity limits, and generate post-event attendance reports.",
-  },
-  {
-    icon: Brain,
-    title: "Office & Workspace",
-    description:
-      "Track space utilization, optimize meeting room availability, and plan facility expansions with confidence.",
+      "Attendance tracking and safety management. Enforce capacity limits and generate post-event crowd reports in real-time.",
   },
 ];
 
 const steps = [
-  { step: "01", title: "Site Survey", description: "Our team visits your location to assess entry points and camera placement." },
-  { step: "02", title: "Hardware Install", description: "AI-powered sensors and cameras are installed at all monitoring points." },
-  { step: "03", title: "Dashboard Setup", description: "Your custom analytics dashboard goes live with your branding and KPIs." },
-  { step: "04", title: "Insights Delivered", description: "Receive daily reports and real-time alerts based on your thresholds." },
+  { step: "01", title: "Site Survey", description: "Our engineers visit your location to assess entry points, lighting, and optimal 3D sensor placement." },
+  { step: "02", title: "Sensor Install", description: "3D binocular AI sensors are mounted at entry and counting zones — powered via POE or DC9‑36V supply." },
+  { step: "03", title: "Dashboard Setup", description: "Real-time analytics dashboard goes live with custom detection zones, gender/age filters, and KPIs." },
+  { step: "04", title: "Insights Delivered", description: "Receive automated daily/weekly/monthly reports, ReID-deduplicated counts, and 90-day local data history." },
 ];
 
 export default function PeopleCountingPage() {
@@ -116,9 +133,10 @@ export default function PeopleCountingPage() {
               </h1>
 
               <p className="text-lg text-slate-300 mb-10 leading-relaxed">
-                AI-powered people counting for retail, malls, offices, and events.
-                Get real-time visitor data and actionable insights to make smarter
-                business decisions.
+                CrowdSense — our 3D AI-powered people counting system — delivers
+                99%+ accuracy using binocular stereo vision and edge computing.
+                Real-time crowd analytics with full privacy compliance across
+                retail, offices, transit, healthcare, and event venues.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -138,8 +156,8 @@ export default function PeopleCountingPage() {
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
               {[
-                { icon: Brain, label: "AI Detection", color: "from-emerald-500 to-teal-500" },
-                { icon: Wifi, label: "Real-time", color: "from-blue-500 to-cyan-500" },
+                { icon: Brain, label: "3D AI Sensing", color: "from-emerald-500 to-teal-500" },
+                { icon: Shield, label: "Privacy-First", color: "from-blue-500 to-cyan-500" },
                 { icon: LineChart, label: "Analytics", color: "from-violet-500 to-purple-500" },
                 { icon: Cpu, label: "Edge AI", color: "from-amber-500 to-orange-500" },
               ].map(({ icon: Icon, label, color }) => (
@@ -156,9 +174,9 @@ export default function PeopleCountingPage() {
           {/* Stats strip */}
           <div className="grid grid-cols-3 gap-6 mt-16 max-w-2xl mx-auto">
             {[
-              { value: "98%+", label: "Counting Accuracy" },
-              { value: "Real-time", label: "Data Streaming" },
-              { value: "Multi-zone", label: "Coverage" },
+              { value: "99%+", label: "Counting Accuracy" },
+              { value: "90 Days", label: "Offline Storage" },
+              { value: "0 PII", label: "Privacy Collected" },
             ].map((stat) => (
               <div key={stat.label} className="text-center p-5 rounded-2xl border dark:border-emerald-500/15 border-slate-200 dark:bg-[rgba(15,31,61,0.7)] bg-white shadow-sm backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/15 transition-all duration-300 ease-in-out will-change-transform">
                 <div className="text-2xl font-bold bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1">{stat.value}</div>
@@ -200,9 +218,9 @@ export default function PeopleCountingPage() {
         <Container>
           <SectionHeader
             eyebrow="How It Works"
-            title="Up and Running in"
-            titleHighlight="Days, Not Months"
-            description="Our team handles everything from site survey to live dashboard."
+            title="3D Depth Sensing to"
+            titleHighlight="Live Dashboard"
+            description="Binocular stereo vision sensors feed real-time 3D depth data into our AI pipeline — from install to actionable insights in days."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((s) => (
@@ -222,12 +240,12 @@ export default function PeopleCountingPage() {
       <Section className="dark:bg-[#0a1628] bg-slate-50">
         <Container>
           <SectionHeader
-            eyebrow="Use Cases"
-            title="Who Benefits from"
-            titleHighlight="People Counting?"
-            description="Any business that values understanding its physical customer traffic."
+            eyebrow="Applications"
+            title="Built for Every"
+            titleHighlight="Environment"
+            description="CrowdSense adapts to any indoor or outdoor scene — from busy shopping malls to transit hubs."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {useCases.map((uc) => (
               <div
                 key={uc.title}
