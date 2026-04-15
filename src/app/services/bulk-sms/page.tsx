@@ -140,11 +140,11 @@ export default function BulkSmsPage() {
                 { icon: BarChart2, label: "Live Analytics", color: "from-violet-500 to-purple-500" },
                 { icon: Lock, label: "OTP Secure", color: "from-emerald-500 to-teal-500" },
               ].map(({ icon: Icon, label, color }) => (
-              <div key={label} className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:-translate-y-2 hover:scale-[1.02] hover:bg-white/10 hover:shadow-xl hover:shadow-emerald-500/15 hover:border-white/20 transition-all duration-300 ease-in-out will-change-transform">
-                  <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${color} flex items-center justify-center`}>
-                    <Icon size={28} className="text-white" strokeWidth={1.5} />
+              <div key={label} className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:-translate-y-2 hover:scale-[1.02] hover:bg-white/10 hover:shadow-xl hover:shadow-emerald-500/15 hover:border-white/20 transition-all duration-300 ease-in-out will-change-transform">
+                  <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${color} flex items-center justify-center`}>
+                    <Icon size={20} className="text-white" strokeWidth={1.5} />
                   </div>
-                  <p className="text-sm font-medium text-slate-300 text-center">{label}</p>
+                  <p className="text-xs font-medium text-slate-300 text-center">{label}</p>
                 </div>
               ))}
             </div>

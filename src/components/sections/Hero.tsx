@@ -2,16 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, MessageSquare, Radio, Users, Code2 } from "lucide-react";
+import { ArrowRight, MessageSquare, Radio, Users, Code2 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { Container } from "@/components/common/Container";
-
-const heroFeatures = [
-  "Fast & Reliable Messaging",
-  "Intelligent Voice Broadcasting",
-  "Real-time People Analytics",
-  "Tailor-made Software Solutions",
-];
 
 export function Hero() {
   const [expanded, setExpanded] = useState(false);
@@ -57,23 +50,6 @@ export function Hero() {
             >
               {expanded ? "Show less ↑" : "Read more ↓"}
             </button>
-
-            {/* Feature checklist */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
-              {heroFeatures.map((feat, i) => (
-                <motion.li
-                  key={feat}
-                  initial={{ opacity: 0, x: -15 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
-                  className="flex items-center gap-2.5 text-sm text-slate-200
-                    bg-white/5 border border-white/10 rounded-xl px-4 py-3 backdrop-blur-sm"
-                >
-                  <CheckCircle2 size={16} className="text-emerald-400 shrink-0" strokeWidth={2} />
-                  {feat}
-                </motion.li>
-              ))}
-            </ul>
 
             {/* CTA Buttons */}
             <motion.div
