@@ -4,6 +4,8 @@ import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
+import { ServiceIconGrid, ServiceStatStrip } from "@/components/sections/ServiceHeroWidgets";
+import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
 import {
   Users,
   Brain,
@@ -132,12 +134,12 @@ export default function PeopleCountingPage() {
                 </span>
               </h1>
 
-              <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+              <ServiceHeroDesc>
                 CrowdSense — our 3D AI-powered people counting system — delivers
                 99%+ accuracy using binocular stereo vision and edge computing.
                 Real-time crowd analytics with full privacy compliance across
                 retail, offices, transit, healthcare, and event venues.
-              </p>
+              </ServiceHeroDesc>
 
               <div className="flex flex-wrap items-center gap-4">
                 <Link
@@ -154,36 +156,23 @@ export default function PeopleCountingPage() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {[
+            <ServiceIconGrid items={[
                 { icon: Brain, label: "3D AI Sensing", color: "from-emerald-500 to-teal-500" },
                 { icon: Shield, label: "Privacy-First", color: "from-blue-500 to-cyan-500" },
                 { icon: LineChart, label: "Analytics", color: "from-violet-500 to-purple-500" },
                 { icon: Cpu, label: "Edge AI", color: "from-amber-500 to-orange-500" },
-              ].map(({ icon: Icon, label, color }) => (
-              <div key={label} className="flex flex-col items-center gap-2 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:-translate-y-2 hover:scale-[1.02] hover:bg-white/10 hover:shadow-xl hover:shadow-emerald-500/15 hover:border-white/20 transition-all duration-300 ease-in-out will-change-transform">
-                  <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${color} flex items-center justify-center`}>
-                    <Icon size={28} className="text-white" strokeWidth={1.5} />
-                  </div>
-                  <p className="text-sm font-medium text-slate-300 text-center">{label}</p>
-                </div>
-              ))}
-            </div>
+              ]} />
           </div>
 
           {/* Stats strip */}
-          <div className="grid grid-cols-3 gap-6 mt-16 max-w-2xl mx-auto">
-            {[
+          <ServiceStatStrip
+            stats={[
               { value: "99%+", label: "Counting Accuracy" },
               { value: "90 Days", label: "Offline Storage" },
               { value: "0 PII", label: "Privacy Collected" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center p-5 rounded-2xl border dark:border-emerald-500/15 border-slate-200 dark:bg-[rgba(15,31,61,0.7)] bg-white shadow-sm backdrop-blur-sm hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/15 transition-all duration-300 ease-in-out will-change-transform">
-                <div className="text-2xl font-bold bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-1">{stat.value}</div>
-                <div className="text-xs text-slate-300">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+            ]}
+            gradientColor="from-emerald-400 to-teal-400"
+          />
         </Container>
       </section>
 
