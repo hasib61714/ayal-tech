@@ -4,7 +4,6 @@ import { ReadMoreText } from "@/components/common/ReadMoreText";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
-import { Stats } from "@/components/sections/Stats";
 import {
   Server,
   TrendingUp,
@@ -209,10 +208,7 @@ export default function WhyUsPage() {
         </Container>
       </Section>
 
-      {/* Stats — colored */}
-      <Stats />
-
-      {/* Our Process — white */}
+{/* Our Process — white */}
       <Section className="bg-white dark:bg-[#050d1f]">
         <Container>
           <SectionHeader

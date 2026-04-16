@@ -53,20 +53,20 @@ export function CTA() {
           </div>
 
           {/* Trust row */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-emerald-200/60 text-sm">
-            <div className="flex items-center gap-2">
+          <div className="mt-12 flex flex-nowrap items-center justify-center gap-8 text-emerald-200/60 text-sm overflow-x-auto">
+            <div className="flex items-center gap-2 whitespace-nowrap">
               <Phone size={14} />
               <span>+880 1971 521964</span>
             </div>
-            <div className="w-px h-4 bg-teal-500/30" />
-            <div className="flex items-center gap-2">
+            <div className="w-px h-4 bg-teal-500/30 shrink-0" />
+            <div className="flex items-center gap-2 whitespace-nowrap">
               <MessageSquare size={14} />
               <span>info@ayaltech.com.bd</span>
             </div>
-            <div className="w-px h-4 bg-teal-500/30" />
-            <div className="flex items-center gap-2">
+            <div className="w-px h-4 bg-teal-500/30 shrink-0" />
+            <div className="flex items-center gap-2 whitespace-nowrap">
               <MapPin size={14} />
-              <span>Level 19, SimpleTree Attalika, 134 Gulshan Ave, Dhaka-1212</span>
+              <span>134 Gulshan Ave, Dhaka-1212</span>
             </div>
           </div>
         </motion.div>
