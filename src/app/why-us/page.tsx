@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeroBg } from "@/components/common/HeroBg";
+import { ReadMoreText } from "@/components/common/ReadMoreText";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
@@ -145,11 +146,11 @@ export default function WhyUsPage() {
                 Why Choose{" "}
                 <span className="gradient-text">AYAL TECH</span>
               </h1>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              <ReadMoreText className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                 We combine modern technology with robust infrastructure to deliver
                 unparalleled value. Here&apos;s why hundreds of businesses across
                 Bangladesh choose AYAL TECH.
-              </p>
+              </ReadMoreText>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
               {[

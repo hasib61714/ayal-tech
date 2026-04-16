@@ -4,7 +4,7 @@ import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
-import { ServiceIconGrid, ServiceStatStrip } from "@/components/sections/ServiceHeroWidgets";
+import { ServiceIconGrid } from "@/components/sections/ServiceHeroWidgets";
 import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
 import {
   MessageSquare,
@@ -143,15 +143,7 @@ export default function BulkSmsPage() {
               ]} />
           </div>
 
-          {/* Stats strip */}
-          <ServiceStatStrip
-            stats={[
-              { value: "2.4M+", label: "Messages Delivered" },
-              { value: "99.5%", label: "Delivery Rate" },
-              { value: "< 3s", label: "Avg. Delivery Time" },
-            ]}
-            gradientColor="from-blue-400 to-cyan-400"
-          />
+
         </Container>
       </section>
 

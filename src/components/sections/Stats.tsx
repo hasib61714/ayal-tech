@@ -8,7 +8,6 @@ const stats = [
   { value: "2.4M+", label: "Messages Delivered" },
   { value: "500+",  label: "Businesses Served"  },
   { value: "1M+",   label: "People Counted"     },
-  { value: "150+",  label: "Projects Delivered" },
 ];
 
 export function Stats() {
@@ -20,7 +19,7 @@ export function Stats() {
       <Container>
         <div
           ref={ref}
-          className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x-0 lg:divide-x divide-emerald-900/40"
+          className="grid grid-cols-2 lg:grid-cols-3 divide-y lg:divide-y-0 divide-x-0 lg:divide-x divide-emerald-900/40"
         >
           {stats.map((stat, i) => (
             <motion.div

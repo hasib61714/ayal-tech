@@ -4,7 +4,7 @@ import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
-import { ServiceIconGrid, ServiceStatStrip } from "@/components/sections/ServiceHeroWidgets";
+import { ServiceIconGrid } from "@/components/sections/ServiceHeroWidgets";
 import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
 import {
   Users,
@@ -164,15 +164,7 @@ export default function PeopleCountingPage() {
               ]} />
           </div>
 
-          {/* Stats strip */}
-          <ServiceStatStrip
-            stats={[
-              { value: "99%+", label: "Counting Accuracy" },
-              { value: "90 Days", label: "Offline Storage" },
-              { value: "0 PII", label: "Privacy Collected" },
-            ]}
-            gradientColor="from-emerald-400 to-teal-400"
-          />
+
         </Container>
       </section>
 

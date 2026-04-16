@@ -5,6 +5,7 @@ import { Container } from "@/components/common/Container";
 import { Card } from "@/components/common/Card";
 import { CTA } from "@/components/sections/CTA";
 import { Target, Eye, Users, Award, Building2, Globe } from "lucide-react";
+import { ReadMoreText } from "@/components/common/ReadMoreText";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -66,15 +67,16 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Who We <span className="gradient-text">Are</span>
+                Who We{" "}<br />
+                <span className="gradient-text">Are</span>
               </h1>
-              <p className="text-lg text-slate-400 leading-relaxed max-w-2xl">
+              <ReadMoreText className="text-lg text-slate-400 leading-relaxed max-w-2xl">
                 AYAL TECH is a cutting-edge technology company specializing in
                 advanced analytics and AI-driven solutions. As a sister concern of
                 Red Data, we leverage deep expertise in artificial intelligence,
                 computer vision, and IoT technologies to deliver innovative solutions
                 for smart building management and crowd monitoring.
-              </p>
+              </ReadMoreText>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
               {[

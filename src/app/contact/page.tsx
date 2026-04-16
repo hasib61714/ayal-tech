@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Send, Mail, MapPin, MessageSquare, CheckCircle2, Phone } from "lucide-react";
 import { HeroBg } from "@/components/common/HeroBg";
+import { ReadMoreText } from "@/components/common/ReadMoreText";
 import { Section } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { Button } from "@/components/common/Button";
@@ -90,10 +91,10 @@ export default function ContactPage() {
                 We&apos;d Love to{" "}
                 <span className="gradient-text">Hear From You</span>
               </h1>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              <ReadMoreText className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                 Looking for reliable communication technology or custom software? Our
                 dedicated team is ready to help.
-              </p>
+              </ReadMoreText>
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4">
               {[

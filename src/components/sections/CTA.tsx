@@ -66,7 +66,7 @@ export function CTA() {
             <div className="w-px h-4 bg-teal-500/30" />
             <div className="flex items-center gap-2">
               <MapPin size={14} />
-              <span>Gulshan, Dhaka</span>
+              <span>Level 19, SimpleTree Attalika, 134 Gulshan Ave, Dhaka-1212</span>
             </div>
           </div>
         </motion.div>

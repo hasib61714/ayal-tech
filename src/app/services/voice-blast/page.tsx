@@ -4,7 +4,7 @@ import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
-import { ServiceIconGrid, ServiceStatStrip } from "@/components/sections/ServiceHeroWidgets";
+import { ServiceIconGrid } from "@/components/sections/ServiceHeroWidgets";
 import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
 import {
   Radio,
@@ -146,15 +146,7 @@ export default function VoiceBlastPage() {
               ]} />
           </div>
 
-          {/* Stats strip */}
-          <ServiceStatStrip
-            stats={[
-              { value: "500K+", label: "Calls Completed" },
-              { value: "95%+", label: "Connect Rate" },
-              { value: "All", label: "BD Networks" },
-            ]}
-            gradientColor="from-violet-400 to-purple-400"
-          />
+
         </Container>
       </section>
 

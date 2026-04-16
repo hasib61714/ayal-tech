@@ -4,7 +4,7 @@ import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
-import { ServiceIconGrid, ServiceStatStrip } from "@/components/sections/ServiceHeroWidgets";
+import { ServiceIconGrid } from "@/components/sections/ServiceHeroWidgets";
 import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
 import {
   Code2,
@@ -150,15 +150,7 @@ export default function CustomSoftwarePage() {
               ]} />
           </div>
 
-          {/* Stats strip */}
-          <ServiceStatStrip
-            stats={[
-              { value: "150+", label: "Projects Delivered" },
-              { value: "100%", label: "On-time Delivery" },
-              { value: "5+", label: "Years Experience" },
-            ]}
-            gradientColor="from-amber-400 to-orange-400"
-          />
+
         </Container>
       </section>
 
