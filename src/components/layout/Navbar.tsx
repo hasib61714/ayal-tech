@@ -40,6 +40,7 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     startTransition(() => {
       setIsOpen(false);
       setServicesOpen(false);
