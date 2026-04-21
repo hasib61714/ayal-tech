@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { HeroBg } from "@/components/common/HeroBg";
 import { Section, SectionHeader } from "@/components/common/Section";
 import { Container } from "@/components/common/Container";
 import { CTA } from "@/components/sections/CTA";
 import { ServiceIconGrid } from "@/components/sections/ServiceHeroWidgets";
 import { ServiceHeroDesc } from "@/components/sections/ServiceHeroDesc";
+import { FeaturesSlider } from "@/components/sections/FeaturesSlider";
 import {
-  Users,
   Brain,
   LineChart,
   ArrowRight,
@@ -16,13 +17,12 @@ import {
   Calendar,
   Cpu,
   Shield,
-  HardDrive,
-  EyeOff,
   GraduationCap,
   HeartPulse,
   Train,
-  UserCheck,
-  RefreshCcw,
+  ScanLine,
+  Globe2,
+  Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -31,42 +31,48 @@ export const metadata: Metadata = {
     "AI-powered real-time people counting for retail, malls, offices, and events. Accurate visitor analytics with live dashboards and business intelligence reports.",
 };
 
-const features = [
+const stats = [
+  { value: "99%+", label: "Detection Accuracy" },
+  { value: "90", label: "Days Offline Storage" },
+  { value: "2 TOPS", label: "AI Compute Engine" },
+  { value: "20%", label: "Energy Efficiency Gain" },
+];
+
+const coreTech = [
+  {
+    icon: ScanLine,
+    title: "3D Depth Sensing",
+    description:
+      "Utilizes advanced ToF (Time of Flight) and structured light technologies for precise real-time depth mapping — far superior to traditional 2D camera systems.",
+    color: "from-emerald-500 to-teal-500",
+  },
   {
     icon: Brain,
-    title: "3D Binocular AI Sensing",
+    title: "AI-Powered Analytics",
     description:
-      "Obtains 3D depth information in real-time via binocular stereo vision AI sensors, identifying head and shoulder features with 99%+ detection accuracy — even in crowded or occluded scenes.",
+      "Machine learning models trained on diverse datasets for accurate person detection, tracking, gender/age recognition, and ReID-based deduplication.",
+    color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: Users,
-    title: "Two-Way People Counting",
+    icon: Cpu,
+    title: "Edge Computing",
     description:
-      "Draws detection frames to track the number of people entering, exiting, passing, staying, and returning. Supports regional counting with custom detection areas and dwell-time tracking.",
+      "2 TOPS heterogeneous on-device processing with 1GB LPDDR4X cache delivers real-time results with minimal latency and 50% higher data throughput.",
+    color: "from-violet-500 to-purple-500",
   },
   {
-    icon: UserCheck,
-    title: "Demographics & Gender AI",
+    icon: Shield,
+    title: "Privacy-First Design",
     description:
-      "Built-in AI recognizes age groups, gender, and ReID data to generate rich crowd portraits. Employee badge identification filters staff entry/exit data from visitor counts.",
+      "No personal data collection — only anonymous counting and crowd analytics. Deep pseudo-color mode ensures complete privacy compliance by design.",
+    color: "from-amber-500 to-orange-500",
   },
   {
-    icon: RefreshCcw,
-    title: "ReID Deduplication",
+    icon: Globe2,
+    title: "Multi-Environment Adaptation",
     description:
-      "Deep learning models eliminate duplicate counting of the same person entering, exiting, or staying multiple times in a day — ensuring accurate net visitor tallies.",
-  },
-  {
-    icon: HardDrive,
-    title: "90-Day Offline Storage",
-    description:
-      "Large local storage capacity holds up to 90 days of data. Query and export records directly on-device — no cloud dependency required.",
-  },
-  {
-    icon: EyeOff,
-    title: "Privacy-First Anonymous Mode",
-    description:
-      "Deep pseudo-color image mode collects zero personal data — only anonymous counting and analytics. Fully privacy-compliant by design.",
+      "Robust performance across strong sunlight, dim lighting, decorative entrance lights, and challenging occlusion scenarios in any indoor or outdoor environment.",
+    color: "from-rose-500 to-pink-500",
   },
 ];
 
@@ -168,7 +174,60 @@ export default function PeopleCountingPage() {
         </Container>
       </section>
 
-      {/* Features */}
+      {/* Stats Strip */}
+      <section className="dark:bg-[#050d1f] bg-slate-900 border-y dark:border-white/8 border-slate-700">
+        <Container>
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 dark:divide-white/8 divide-slate-700">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center justify-center py-8 px-4 text-center">
+                <span className="text-3xl md:text-4xl font-bold bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                  {s.value}
+                </span>
+                <span className="text-slate-400 text-xs mt-1 uppercase tracking-wider">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Core Technology */}
+      <Section>
+        <Container>
+          <SectionHeader
+            eyebrow="Core Technology"
+            title="Built on Advanced"
+            titleHighlight="AI & 3D Sensing"
+            description="Our proprietary technology stack combines 3D depth sensing, on-device AI, and edge computing to deliver industry-leading accuracy with complete privacy compliance."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreTech.map((tech) => (
+              <div
+                key={tech.title}
+                className="group relative p-6 rounded-2xl border dark:border-emerald-500/15 border-slate-200 dark:bg-[rgba(15,31,61,0.7)] bg-white shadow-sm hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-700/40 transition-all duration-300 ease-in-out will-change-transform overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-linear-to-br ${tech.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                <div className={`w-11 h-11 rounded-xl bg-linear-to-br ${tech.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                  <tech.icon size={20} className="text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-white font-semibold mb-2 text-sm">{tech.title}</h3>
+                <p className="text-slate-300 text-xs leading-relaxed">{tech.description}</p>
+              </div>
+            ))}
+            {/* Key advantage card spanning full width on small, 1 col on lg */}
+            <div className="sm:col-span-2 lg:col-span-3 p-6 rounded-2xl border border-emerald-500/30 bg-linear-to-r from-emerald-500/10 to-teal-500/10 dark:bg-[rgba(15,31,61,0.7)] flex flex-col md:flex-row items-start md:items-center gap-4">
+              <Zap size={28} className="text-emerald-400 shrink-0" />
+              <div>
+                <p className="text-emerald-400 font-semibold text-sm mb-1">Key Advantage</p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Our proprietary algorithms achieve <span className="text-white font-semibold">99%+ accuracy rates</span> while maintaining complete privacy compliance and operating in challenging environmental conditions — including strong sunlight, dim light, and high-density crowded scenes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Features Slider */}
       <Section className="dark:bg-[#0a1628] bg-slate-50">
         <Container>
           <SectionHeader
@@ -177,20 +236,7 @@ export default function PeopleCountingPage() {
             titleHighlight="Intelligence"
             description="Advanced AI counting with the analytics tools to turn data into decisions."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feat) => (
-              <div
-                key={feat.title}
-                className="group p-6 rounded-2xl border dark:border-emerald-500/15 border-slate-200 dark:bg-[rgba(15,31,61,0.7)] bg-white shadow-sm hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-500/15 hover:border-emerald-700/40 hover:bg-teal-500/5 transition-all duration-300 ease-in-out will-change-transform"
-              >
-                <div className="w-10 h-10 rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <feat.icon size={18} className="text-white" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-white font-semibold mb-2 text-sm">{feat.title}</h3>
-                <p className="text-slate-300 text-xs leading-relaxed">{feat.description}</p>
-              </div>
-            ))}
-          </div>
+          <FeaturesSlider />
         </Container>
       </Section>
 
@@ -226,6 +272,16 @@ export default function PeopleCountingPage() {
             titleHighlight="Environment"
             description="CrowdSense adapts to any indoor or outdoor scene — from busy shopping malls to transit hubs."
           />
+          {/* Applications isometric map */}
+          <div className="relative w-full rounded-2xl overflow-hidden border dark:border-emerald-500/15 border-slate-200 mb-10 bg-slate-900">
+            <Image
+              src="/people-counting/applications-map.jpeg"
+              alt="CrowdSense Applications Map"
+              width={1400}
+              height={700}
+              className="w-full object-contain"
+            />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {useCases.map((uc) => (
               <div
