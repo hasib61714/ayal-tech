@@ -26,8 +26,8 @@ const contactInfo = [
   {
     icon: MessageSquare,
     label: "WhatsApp",
-    value: "+880 1971 521964",
-    href: "https://wa.me/8801971521964",
+    value: "09640123786",
+    href: "https://wa.me/09640123786",
     color: "from-emerald-500 to-teal-500",
   },
   {

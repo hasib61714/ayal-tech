@@ -83,9 +83,9 @@ export function Navbar() {
                 <Mail size={12} className="text-emerald-400 shrink-0" />
                 info@ayaltech.com.bd
               </a>
-              <a href="tel:+8801971521964" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <a href="tel:09640123786" className="flex items-center gap-1.5 hover:text-white transition-colors">
                 <Phone size={12} className="text-emerald-400 shrink-0" />
-                +880 1971521964
+                09640123786
               </a>
             </div>
           </div>

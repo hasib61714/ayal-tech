@@ -42,7 +42,7 @@ export function CTA() {
               Get in Touch Now
             </Button>
             <a
-              href="https://wa.me/8801971521964"
+              href="https://wa.me/09640123786"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/40 backdrop-blur-sm transition-all duration-300"
