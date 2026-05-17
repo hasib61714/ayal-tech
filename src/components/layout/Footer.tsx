@@ -134,7 +134,7 @@ export function Footer() {
                   className="flex items-start gap-3 text-slate-400 text-sm hover:text-emerald-400 transition-colors group"
                 >
                   <MessageSquare size={15} className="mt-0.5 shrink-0 group-hover:text-emerald-400" />
-                  +880 1971 521964
+                  09640123786
                 </a>
               </li>
               <li>
